@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ 	xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"    
+    android:id="@+id/mainmenu"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/relativeLayout"
+        android:alpha="0.5"
+        android:background="@color/heading_background_color"></FrameLayout>
+
+    <TextView
+        android:id="@+id/page_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="ANNOUNCEMENTS"
+        android:textSize="25dip"
+        android:textStyle="bold|italic"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:textColor="@color/large_heading" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/page_title"
+        android:padding="10dp"
+        android:id="@+id/relativeLayout">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="No Announcements as of yet.."
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelog>
+    <release version="0.0.2" versioncode="002">
+        <change>Added User sign up and auth.</change>
+        <change>Added round configuration.</change>
+        <change>FIX: Fixed navigation error leading to non-existant page.</change>
+        <change>FIX: Fixed settings page to logout user. This removes account from device.</change>
+        <change>REMOVED: Auto login if account data saved. Had a bug which is been fixed ASAP.</change>
+    </release>
+    <release version="0.0.1" versioncode="001">
+        <change>Implemented navigation system.</change>
+        <change>Added splashscreen to display logo etc.</change>
+        <change>Added EULA agreement.</change>
+        <change>Added Preferences system (temporary)</change>
+    </release>
+</changelog>

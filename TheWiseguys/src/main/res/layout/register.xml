@@ -1,0 +1,182 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Register">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:alpha="0.5"
+        android:background="@color/heading_background_color"></FrameLayout>
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        android:text="REGISTER"
+        android:textSize="25dip"
+        android:textStyle="bold|italic"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:autoText="true"
+        android:textColor="@color/large_heading" />
+    <!-- Register progress -->
+    <LinearLayout android:id="@+id/register_status"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <ProgressBar style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"/>
+        <TextView
+            android:id="@+id/register_status_message"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:fontFamily="sans-serif-light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/register_progress_signing_up" />
+    </LinearLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/register_form"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:paddingTop="50dp">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        >
+        <!--  View Title Label -->
+
+
+
+        <!--  Name Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textColor="@color/small_heading"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"/>
+        <!--  Name TextField -->
+        <EditText
+            android:id="@+id/registerName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip" />
+
+        <!--  Email Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/small_heading"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"/>
+        <!--  Email TextField -->
+        <EditText
+            android:id="@+id/registerEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"/>
+
+        <!--  Password Label -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dip"
+            android:text="Password"
+            android:textColor="@color/small_heading"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip"/>
+        <!--  Password TextField -->
+        <EditText
+            android:id="@+id/registerPassword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:password="true"
+            android:layout_marginLeft="5dip"
+            android:layout_marginRight="5dip"
+            android:imeActionLabel="@string/action_sign_up_short"
+            android:imeActionId="@+id/register"
+            android:imeOptions="actionUnspecified"
+            android:paddingLeft="10dip"
+            android:paddingRight="10dip" />
+
+        <!--  Error message -->
+        <TextView android:id="@+id/register_error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:background="#ffcb5a58"
+            android:alpha="0"
+            android:padding="10dip"
+            android:layout_margin="10dip"
+            android:textStyle="bold"/>
+
+        <!--  Login Button -->
+
+        <!--  Link to Registration Screen -->
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_button"
+            android:layout_gravity="center"
+            android:background="@drawable/button_background"
+            android:textStyle="bold"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/btnLinkToLoginScreen"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/register_button_login"
+            android:textStyle="bold"
+            android:typeface="normal"
+            android:background="@drawable/button_background"
+            android:layout_margin="5dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="left|center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/changelog.lastshown.version"
+                android:id="@+id/textView"
+                android:layout_alignBottom="@+id/imageView"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/small_heading" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
+</merge>

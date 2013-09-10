@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="mainmenu_button1">List/Detail (Fragment)</string>
+    <string name="mainmenu_button2">Airport (Volley)</string>
+    <string name="mainmenu_button3">Simple Map</string>
+
+
+    <string name="loginmenu_button1">Login</string>
+    <string name="loginmenu_button2">Signup</string>
+
+</resources>

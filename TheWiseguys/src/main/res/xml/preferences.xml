@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Account Options" >
+        <Preference
+            android:key="user_email"
+            android:summary="Remove account from this device"
+            android:title="Sign Out">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.thewiseguys.app"
+                android:targetClass="com.thewiseguys.app.login.Logout"
+                />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Application Info" >
+        <Preference
+            android:key="changelog.lastshown.version"
+            android:selectable="false"
+            android:title="Version"
+            android:summary="@string/changelog.lastshown.version"/>
+    </PreferenceCategory>
+</PreferenceScreen>
