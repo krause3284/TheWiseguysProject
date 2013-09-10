@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <changelog>
+    <release version="0.0.3" versioncode="003">
+        <change>FIX: Auto login should now work.</change>
+        <change>Re-coded the login system. Should now be more efficient and check for net connection.</change>
+    </release>
     <release version="0.0.2" versioncode="002">
         <change>Added User sign up and auth.</change>
         <change>Added round configuration.</change>

@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -39,7 +40,6 @@ public class Login extends Activity {
     /**
      * The default email to populate the email field with.
      */
-    public static final String EXTRA_EMAIL = "";
 
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -48,7 +48,6 @@ public class Login extends Activity {
 
     // Values for email and password at the time of the login attempt.
     private String mEmail;
-    private String result;
     private String mPassword;
 
     // UI references.
@@ -108,6 +107,7 @@ public class Login extends Activity {
         mLoginFormView = findViewById(R.id.login_form);
         mLoginStatusView = findViewById(R.id.login_status);
         mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
+        mLoginStatusMessageView = (TextView) findViewById(R.id.login_status_message);
         loginError = (TextView) findViewById(R.id.login_error);
 
         findViewById(R.id.btnLogin).setOnClickListener(new View.OnClickListener() {
@@ -116,6 +116,10 @@ public class Login extends Activity {
                 attemptLogin();
             }
         });
+
+        if(mEmail != "" && mPassword != ""){
+            attemptLogin();
+        }
     }
 
 
@@ -183,10 +187,6 @@ public class Login extends Activity {
             mAuthTask.execute();
         }
     }
-
-    /**
-     * Shows the progress UI and hides the login form.
-     */
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         // On Honeycomb MR2 we have the ViewPropertyAnimator APIs, which allow
@@ -223,12 +223,12 @@ public class Login extends Activity {
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
-
     /**
-     * Represents an asynchronous login/registration task used to authenticate
+     * Represents an asynchronous logi/registration task used to authenticate
      * the user.
      */
     private class UserLoginTask extends AsyncTask<String, Void, String> {
+
         @Override
         protected String doInBackground(String... params) {
             String responseString = null;
