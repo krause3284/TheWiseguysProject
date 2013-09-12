@@ -19,7 +19,7 @@ import java.net.UnknownHostException;
  * TheWiseguys - com.thewiseguys.android
  */
 public class SystemFunctions {
-    private static String serverURL = "http://192.168.20.104/";
+    private static String serverURL = "http://192.168.20.104/twserver/";
 
     private static final String TAG = SystemFunctions.class.getSimpleName();
 

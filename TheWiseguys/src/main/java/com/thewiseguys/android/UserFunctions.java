@@ -13,9 +13,13 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 import com.thewiseguys.android.db.sqlite.DBHandler;
 import com.thewiseguys.android.json.JSONParser;
+import com.thewiseguys.app.R;
 
 public class UserFunctions {
     private static String serverUrl = SystemFunctions.getServerURL();
@@ -24,11 +28,14 @@ public class UserFunctions {
     // http://192.168.56.101
     // Testing in localhost using wamp or xampp
     // use http://10.0.2.2/ to connect to your localhost ie http://localhost/
-    private static String loginURL = serverUrl+"twserver/login.php";
-    private static String registerURL = serverUrl+"twserver/register.php";
+    private static String loginURL = serverUrl+"login.php";
+    private static String userURL = serverUrl+"user_functions.php";
+    private static String registerURL = serverUrl+"register.php";
 
     private static String login_tag = "login";
     private static String register_tag = "register";
+
+    private String userEmail;
 
     // constructor
     public UserFunctions(){
@@ -68,6 +75,23 @@ public class UserFunctions {
 
         // getting JSON Object
         JSONObject json = jsonParser.getJSONFromUrl(registerURL, params);
+        // return json
+        return json;
+    }
+
+    public JSONObject updateOnline(Context context){
+        // Building Parameters
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        String userEmail = prefs.getString("user_email","");
+        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        params.add(new BasicNameValuePair("tag", "updateonline"));
+        params.add(new BasicNameValuePair("email", userEmail));
+
+        // getting JSON Object
+        String updateURL = serverUrl+Integer.toString(R.string.url_update_user);
+        Log.d("User-Functions", updateURL);
+        JSONObject json = jsonParser.getJSONFromUrl(userURL, params);
         // return json
         return json;
     }
